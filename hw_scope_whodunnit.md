@@ -26,6 +26,8 @@ const declareMurderer = function() {
 
 const verdict = declareMurderer();
 console.log(verdict);
+
+// The murderer is Miss Scarlet
 ```
 
 #### Episode 2
@@ -37,6 +39,8 @@ const changeMurderer = function() {
   murderer = 'Mrs. Peacock';
 }
 
+// It is not possible to change a constant
+
 const declareMurderer = function() {
   return `The murderer is ${murderer}.`;
 }
@@ -44,6 +48,9 @@ const declareMurderer = function() {
 changeMurderer();
 const verdict = declareMurderer();
 console.log(verdict);
+
+// The murderer is Professor Plum
+//Because murderer is a constant
 ```
 
 #### Episode 3
@@ -59,8 +66,12 @@ const declareMurderer = function() {
 const firstVerdict = declareMurderer();
 console.log('First Verdict: ', firstVerdict);
 
+// The murderer is Mrs. Peacock
+
 const secondVerdict = `The murderer is ${murderer}.`;
 console.log('Second Verdict: ', secondVerdict);
+
+// murderer is Professor Plum, the murderer from declareMurderer only exists inside the function
 ```
 
 #### Episode 4
@@ -75,9 +86,15 @@ const declareAllSuspects = function() {
   return `The suspects are ${suspectOne}, ${suspectTwo}, ${suspectThree}.`;
 }
 
+// suspectOne = 'Miss Scarlet', suspectTwo = 'Professor Plum', suspectThree = 'Colonel Mustard'
+
 const suspects = declareAllSuspects();
 console.log(suspects);
+// let suspectOne = 'Miss Scarlet';
+// let suspectTwo = 'Professor Plum';
+// let suspectThree = 'Colonel Mustard';
 console.log(`Suspect three is ${suspectThree}.`);
+// let suspectThree = 'Mrs. Peacock';
 ```
 
 #### Episode 5
@@ -100,6 +117,9 @@ const declareWeapon = function() {
 changeWeapon('Revolver');
 const verdict = declareWeapon();
 console.log(verdict);
+
+// The weapon is the Revolver
+
 ```
 
 #### Episode 6
@@ -117,6 +137,8 @@ const changeMurderer = function() {
   plotTwist();
 }
 
+// murderer = Mrs. White is the function result
+
 const declareMurderer = function () {
   return `The murderer is ${murderer}.`;
 }
@@ -124,6 +146,7 @@ const declareMurderer = function () {
 changeMurderer();
 const verdict = declareMurderer();
 console.log(verdict);
+// murderer = Mrs White, because we run changeMurderer
 ```
 
 #### Episode 7
@@ -133,12 +156,13 @@ let murderer = 'Professor Plum';
 
 const changeMurderer = function() {
   murderer = 'Mr. Green';
-
+  // is a global variable
   const plotTwist = function() {
     let murderer = 'Colonel Mustard';
-
+    //murderer won't leave the function
     const unexpectedOutcome = function() {
       murderer = 'Miss Scarlet';
+      //murderer won't go further than the previous murderer variable
     }
 
     unexpectedOutcome();
@@ -147,13 +171,17 @@ const changeMurderer = function() {
   plotTwist();
 }
 
+
+
 const declareMurderer = function() {
   return `The murderer is ${murderer}.`;
 }
 
-changeMurderer();
+const another = changeMurderer();
 const verdict = declareMurderer();
 console.log(verdict);
+// The murderer is Mr Green
+
 ```
 
 #### Episode 8
@@ -193,6 +221,7 @@ const declareWeapon = function() {
 changeScenario();
 const verdict = declareWeapon();
 console.log(verdict);
+// Candle stick
 ```
 
 #### Episode 9
@@ -210,8 +239,30 @@ const declareMurderer = function() {
 
 const verdict = declareMurderer();
 console.log(verdict);
+
+// Professor Plum
+
 ```
 
 ### Extensions
 
 Make up your own episode!
+
+```js
+
+  isDuck = function(weapon) {
+    let murderer = 'Mr Proper';
+    if (weapon.toLowerCase() === 'toilet roll' ) {
+      murderer = 'Duck';
+    }
+
+    return murderer
+  }
+
+
+  console.log(isDuck('toilet roll'));
+  console.log(isDuck('other'));
+
+
+
+```
