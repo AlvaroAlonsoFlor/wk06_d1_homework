@@ -250,7 +250,7 @@ Make up your own episode!
 
 ```js
 
-  isDuck = function(weapon) {
+  const isDuck = function(weapon) {
     let murderer = 'Mr Proper';
     if (weapon.toLowerCase() === 'toilet roll' ) {
       murderer = 'Duck';
